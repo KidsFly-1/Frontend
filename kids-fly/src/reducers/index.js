@@ -23,6 +23,7 @@ import {
 
 const initialState = {
         trips: [],
+        userTrips: [],
         isUpdating: false,
         error: ''
     };
@@ -78,13 +79,13 @@ const initialState = {
             case GET_SUCCESS : 
                 return {
                     ...state,
-                    trips: action.payload,
+                    userTrips: action.payload,
                     isUpdating: false
                 }
                 case ADD_SUCCESS : 
                 return {
                     ...state,
-                    trips: action.payload,
+                    userTrips: action.payload,
                     isUpdating: false
                 }
                 case UPDATE_SUCCESS : 

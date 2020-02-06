@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {login} from '../actions/login'
 
-const Login = () => {
+const Login = (props) => {
 
-    handleSubmit = (values) => {
-        props.login(values)
-
-    }
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.login(e);
+    };
 
     return (  
         <div><h1 className='input-h1'>Login</h1>
@@ -17,12 +17,10 @@ const Login = () => {
                 <input className='regi-text-input' type='text' placeholder='Email' /><br/>
                 <input className='regi-text-input' type='text' placeholder='Password' /><br/>
                 <Link to='/'><button className='input-button'>Go Back</button></Link>
-                <button className='regi-input-button'>Login</button>
+                <button type="submit" className='regi-input-button'>Login</button>
             </form>
         </div>
     );
 }
-
-
 
 export default connect(null, {login})(Login);
