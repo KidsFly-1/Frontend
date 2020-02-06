@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 
 // import Login from './components/Login';
 // import RegisterForm from './components/RegisterForm';
+
 import MyTrips from './components/MyTrips';
 import AllTrips from './components/AllTrips';
 import NewTrip from './components/NewTrip';
@@ -23,8 +24,10 @@ function App() {
         <Route path='/register' component={RegisterForm} />   */}
         <PrivateRoute path='/my-trips/:id' component={MyTrips} />
         <PrivateRoute path='/new-trip/:id' component={NewTrip} />
-        <PrivateRoute path='/all-trips/:id' component={AllTrips} />
+        <PrivateRoute path='/all-trips/:id' component={AllTrips} /> 
+       
       </div>
+      
       <Footer />
     </div>
   );
