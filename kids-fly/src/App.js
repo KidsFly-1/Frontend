@@ -4,24 +4,26 @@ import './App.css';
 
 // Components
 import { PrivateRoute } from './components/PrivateRoute';
-import NavBar from './components/NavBar';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Login from './components/Login';
-import RegisterForm from './components/RegisterForm';
-import MyTrips from './components/MyTrips';
-import AllTrips from './components/AllTrips';
-import NewTrip from './components/NewTrip';
+import LoginRoute from './components/LoginRoutes';
+import MyTrips from './components/MyTripsPage';
+// import NewTrip from './components/NewTrip';
+// import Login from './components/Login';
+// import RegisterForm from './components/RegisterForm';
+// import AllTrips from './components/AllTrips';
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <div className="content-wrap">
-        <Route path='/' component={NavBar} />
-        <Route path='/login' component={Login} />
-        <Route path='/register' component={RegisterForm} />  
+        <Route path='/' component={LoginRoute} />
+        {/* <Route path='/login' component={Login} />
+        <Route path='/register' component={RegisterForm} />   */}
         <PrivateRoute path='/my-trips/:id' component={MyTrips} />
-        <PrivateRoute path='/new-trip/:id' component={NewTrip} />
-        <PrivateRoute path='/all-trips/:id' component={AllTrips} />
+        {/* <PrivateRoute path='/new-trip/:id' component={NewTrip} /> */}
+        {/* <PrivateRoute path='/all-trips/:id' component={AllTrips} /> */}
       </div>
       <Footer />
     </div>
