@@ -14,14 +14,14 @@ const Login = () => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
 
-    handleSubmit = (values) => {
+    handleSubmit = (e, values) => {
+        e.preventDefault()
         props.login(values)
-
     }
 
     return (  
         <div><h1 className='input-h1'>Login</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input onChange={handleChange} name='email' className='regi-text-input' type='text' value={user.email} placeholder='Email' /><br/>
                 <input onChange={handleChange} name='password' className='regi-text-input' type='password' placeholder='Password' /><br/>
                 <Link to='/'><button className='input-button'>Go Back</button></Link>
