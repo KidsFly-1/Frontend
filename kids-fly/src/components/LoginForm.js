@@ -1,9 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import './Login.css'
 import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {login} from '../actions/login'
 
 const Login = () => {
+
+    handleSubmit = (values) => {
+        props.login(values)
+
+    }
+
     return (  
         <div><h1 className='input-h1'>Login</h1>
             <form>
@@ -15,5 +22,7 @@ const Login = () => {
         </div>
     );
 }
- 
-export default Login;
+
+
+
+export default connect(null, {login})(Login);
