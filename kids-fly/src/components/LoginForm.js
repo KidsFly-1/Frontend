@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {login} from '../actions/login'
 
-const Login = () => {
+const Login = props => {
     const [user, setUser] = useState({ 
         email: '',
         password: ''
@@ -14,7 +14,7 @@ const Login = () => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
 
-    handleSubmit = (e, values) => {
+    const handleSubmit = (e, values) => {
         e.preventDefault()
         props.login(values)
     }
