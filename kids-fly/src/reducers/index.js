@@ -19,7 +19,7 @@ import {
     UPDATE_SUCCESS,
     DELETE_SUCCESS,
     FAILURE
-} from '../actions/tripsActions'
+} from '../actions/tripsActions';
 
 const initialState = {
         trips: [],
