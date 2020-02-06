@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const TripEdit = () => {
     return (
         <div class="form-style-10">
