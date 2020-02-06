@@ -7,7 +7,7 @@ import { PrivateRoute } from './components/PrivateRoute';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Login from './components/Login';
-import RegisterForm from './components/RegisterForm';
+import RegisterForm from './components/NewTrips';
 import MyTrips from './components/MyTrips';
 import AllTrips from './components/AllTrips';
 import NewTrip from './components/NewTrip';
