@@ -1,3 +1,7 @@
+.regi-text-input:focus, .regi-input-button:focus {
+    outline: none;
+}
+
 .regi-input-h1 {
     color: #1A70E2;
 }
