@@ -68,7 +68,6 @@ const Register = (props) => {
                 <button onClick={e => testPass()} className='regi-input-button'>Continue</button>
             </form>
         </div>
-
     );
 }
 
