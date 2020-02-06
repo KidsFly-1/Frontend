@@ -1,8 +1,7 @@
 import React from 'react';
-import './RegisterForm.css'
 import { Link } from 'react-router-dom'
-import Traveler from './img/Traveler.png'
-import KidsConnect from './img/KidsConnect.png'
+import Traveler from '../img/Traveler.png'
+import KidsConnect from '../img/KidsConnect.png'
 
 const Register = () => {
     return (  

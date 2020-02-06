@@ -9,7 +9,7 @@ export const register = values => dispatch => {
     dispatch({type: START_REGISTER});
     axiosWithAuth()
         .post(
-            'https://kids-fly-bw.herokuapp.com/register',
+            'https://evening-island-60784.herokuapp.com/api/auth/register',
             values
         )
         .then(res => {

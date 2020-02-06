@@ -6,8 +6,9 @@ import './App.css';
 import { PrivateRoute } from './components/PrivateRoute';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Login from './components/Login';
-import RegisterForm from './components/RegisterForm';
+
+// import Login from './components/Login';
+// import RegisterForm from './components/RegisterForm';
 import MyTrips from './components/MyTrips';
 import AllTrips from './components/AllTrips';
 import NewTrip from './components/NewTrip';
@@ -15,10 +16,11 @@ import NewTrip from './components/NewTrip';
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <div className="content-wrap">
-        <Route path='/' component={NavBar} />
-        <Route path='/login' component={Login} />
-        <Route path='/register' component={RegisterForm} />  
+        <Route path='/' component={LoginRoute} />
+        {/* <Route path='/login' component={Login} />
+        <Route path='/register' component={RegisterForm} />   */}
         <PrivateRoute path='/my-trips/:id' component={MyTrips} />
         <PrivateRoute path='/new-trip/:id' component={NewTrip} />
         <PrivateRoute path='/all-trips/:id' component={AllTrips} />

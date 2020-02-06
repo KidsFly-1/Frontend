@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom'
 
 const Register = ({ link }) => {
     const [user, setUser] = useState({
-        firstName: '',
-        lastName: '',
+        fullName: '',
         email: '',
-        password: ''
+        password: '',
+        address: '',
+        phone: '',
+        localAirport: ''
     }) 
     const [pass, setPass] = useState('')
     const [passLink, setPassLink] = useState(link)
@@ -28,16 +30,6 @@ const Register = ({ link }) => {
 
     const handleSubmit = e => {
         e.preventDefault()
-    }
-
-    const lastName = () => {
-        if (link === '/register/kidsconnect2') {
-           return(
-               <div>
-               <input className='regi-text-input' onChange={handleChange} value={user.name} name='name' type='text' placeholder='Last Name' /><br/>
-               </div>
-           )
-        }
     }
     
     const [warning, setWarning] = useState('')
@@ -62,9 +54,11 @@ const Register = ({ link }) => {
             <h1 className='regi-input-h1'>Register</h1>
             <h1 className='regi-input-warning'>{warning}</h1>
             <form onSubmit={handleSubmit}>
-                <input className='regi-text-input' onChange={handleChange} value={user.name} name='name' type='text' placeholder='First Name' /><br/>
-                {lastName()}
+                <input className='regi-text-input' onChange={handleChange} value={user.fullName} name='name' type='text' placeholder='Full name' /><br/>
                 <input className='regi-text-input' onChange={handleChange} value={user.email} name='email' type='password' placeholder='Email' /><br/>
+                <input className='regi-text-input' onChange={handleChange} value={user.localAirport} name='password' type='password' placeholder='Local airport' /><br/>
+                <input className='regi-text-input' onChange={handleChange} value={user.address} name='password' type='password' placeholder='Address' /><br/>
+                <input className='regi-text-input' onChange={handleChange} value={user.phone} name='password' type='password' placeholder='Phone number' /><br/>
                 <input className='regi-text-input' onChange={handleChange} value={user.password} name='password' type='password' placeholder='Password' /><br/>
                 <input className='regi-text-input' onChange={handlePass} type='password' placeholder='Confirm Password' /><br/>
                 <Link to='/register'><button className='regi-input-button'>Go Back</button></Link>
