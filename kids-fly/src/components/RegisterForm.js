@@ -54,18 +54,17 @@ const Register = ({ link }) => {
             <h1 className='regi-input-h1'>Register</h1>
             <h1 className='regi-input-warning'>{warning}</h1>
             <form onSubmit={handleSubmit}>
-                <input className='regi-text-input' onChange={handleChange} value={user.fullName} name='name' type='text' placeholder='Full name' /><br/>
+                <input className='regi-text-input' onChange={handleChange} value={user.fullName} name='fullName' type='text' placeholder='Full name' /><br/>
                 <input className='regi-text-input' onChange={handleChange} value={user.email} name='email' type='password' placeholder='Email' /><br/>
-                <input className='regi-text-input' onChange={handleChange} value={user.localAirport} name='password' type='password' placeholder='Local airport' /><br/>
-                <input className='regi-text-input' onChange={handleChange} value={user.address} name='password' type='password' placeholder='Address' /><br/>
-                <input className='regi-text-input' onChange={handleChange} value={user.phone} name='password' type='password' placeholder='Phone number' /><br/>
+                <input className='regi-text-input' onChange={handleChange} value={user.localAirport} name='localAirport' type='password' placeholder='Local airport' /><br/>
+                <input className='regi-text-input' onChange={handleChange} value={user.address} name='address' type='password' placeholder='Address' /><br/>
+                <input className='regi-text-input' onChange={handleChange} value={user.phone} name='phone' type='password' placeholder='Phone number' /><br/>
                 <input className='regi-text-input' onChange={handleChange} value={user.password} name='password' type='password' placeholder='Password' /><br/>
                 <input className='regi-text-input' onChange={handlePass} type='password' placeholder='Confirm Password' /><br/>
                 <Link to='/register'><button className='regi-input-button'>Go Back</button></Link>
                 <button onClick={e => testPass()} className='regi-input-button'>Continue</button>
             </form>
         </div>
-
     );
 }
 
