@@ -8,10 +8,10 @@ export const UPDATE_SUCCESS = 'UPDATE_SUCCESS'
 export const DELETE_SUCCESS = 'DELETE_SUCCESS'
 export const FAILURE = 'FAILURE';
 
-export const getUserTrips = (id) => dispatch => {
+export const getUserTrips = () => dispatch => {
     dispatch({type: UPDATING})
     axiosWithAuth()
-        .get(`/api/${id}`)
+        .get(`/api/user_trips`)
         .then(res=>{
             dispatch({type: GET_SUCCESS, payload: res.data})
         })
@@ -23,7 +23,7 @@ export const getUserTrips = (id) => dispatch => {
 export const getAllTrips = () => dispatch => {
     dispatch({type: UPDATING})
     axiosWithAuth()
-        .get('/api')
+        .get('/api/trips')
         .then(res=>{
             dispatch({type: GET_SUCCESS, payload: res.data})
         })
@@ -35,7 +35,7 @@ export const getAllTrips = () => dispatch => {
 export const addTrip = (id, info) => dispatch => {
     dispatch({type: UPDATING})
     axiosWithAuth()
-        .post(`/api/${id}`, info)
+        .post(`/api/user_trips/add`, info)
         .then(res=>{
             dispatch({type: ADD_SUCCESS, payload: res.data})
             history.push(`/my-trips/${id}`)
@@ -48,12 +48,12 @@ export const addTrip = (id, info) => dispatch => {
 export const deleteTrip = (id, userId) => dispatch => {
     dispatch({type: UPDATING})
     axiosWithAuth()
-        .delete(`/api/${id}`)
+        .delete(`/api/user_trips/${id}`)
         .then(res=>{
             console.log('update trip res', res)
             dispatch({type: DELETE_SUCCESS})
             axiosWithAuth()
-                .get(`/api/${userId}`)
+                .get(`/api/user_trips/${userId}`)
                 .then(res=>{
                     dispatch({type: GET_SUCCESS, payload: res.data})
                 })

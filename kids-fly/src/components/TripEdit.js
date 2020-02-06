@@ -1,35 +1,50 @@
 import React from 'react';
 
 
-const TripEdit = () => {
+function TripEdit (props) {
+
+    const { errors, touched, handleSubmit, value, register} = useForm(props)
+    const onSubmit = value => {
+        console.log(value);
+    }
+    
     return (
         <div class="form-style-10">
         <h1>KidsFly<span>Prepare for trip today</span></h1>
 
-        <form>
+        <form onSubmit ={handleSubmit(onSubmit)}>
         <div class="inner-wrap">
-        <label>Airport Name <input type="text" name="field1" /></label>
-        <label>Airline <textarea name="field2"></textarea></label>
+        <label>Airport<input type="text" placeholder="Airport" value={props.Airport} name="field1" ref={register({required: 'Required'})} /></label>
+            {touched.Airport && errors.Airport && (<p className="errors">{errors.Airport}</p>)}
+        <label>Airline<input type="text" value={props.Airline}/> <textarea name="field2" ref={register({required: 'Required'})}></textarea></label>
+            {touched.Airline && errors.Airline && (<p className="errors">{errors.Airline}</p>)}
         </div>
-
        
         <div class="inner-wrap">
-        <label>Departure Time <input type="text" name="field3" /></label>
-        <label>Number of Carryon(s)<input type="text" name="field4" /></label>
+        <label>Flight <input type="text" placeholder="Flight Number" name="field3" value={props.Flight} ref={register({required: 'Required'})} /></label>
+            {touched.Flight && errors.Flight && (<p className="errors">{errors.Flight}</p>)}
+        <label>DepartureTime<input type="text" name="field4" value={value.DepartureTime} ref={register({required: 'Required'})} /></label>
+            {touched.DepartureTime && errors.DepartureTime && (<p className="errors">{errors.DepartureTime}</p>)}
         </div>
 
-    
         <div class="inner-wrap">
-        <label>Number of Checked Items <input type="text" name="field5" /></label>
-        <label>Number of Children <input type="text" name="field6" /></label>
+        <label>CarryonBags<input type="text" name="field5" value={props.CarryonBags} ref={register({required: 'Required'})}/> </label>
+            {touched.CarryonBags && errors.CarryonBags && (<p className="errors">{errors.CarryonBags}</p>)}
+        <label>CheckedBags <input type="text" value={props.CheckedBags} name="field6" ref={register({required: 'Required'})} /></label>
+        {touched.CheckedBags && errors.CheckedBags && (<p className="errors">{errors.CheckedBags}</p>)}
         </div>
+
         <div class="inner-wrap">
-        <label>Additional Request<input type="text" name="field6" /></label>
+        <label>Children<input type="text" name="field7" value={props.Children} ref={register({required: 'Required'})}/></label>
+        {touched.Children && errors.Children && (<p className="errors">{errors.Children}</p>)}
+        <label>Arrived <input type="text" value={props.Arrived} name="field8" ref={register({required: 'Required'})} /></label>
+        {touched.Arrived && errors.Arrived && (<p className="errors">{errors.Arrived}</p>)}
+        <label>Enroute <input type="text" name="field9" value={props.Enroute} ref={register({required: 'Required'})}/></label>
+        {touched.Enroute && errors.Enroute && (<p className="errors">{errors.Enroute}</p>)}
         </div>
-        <button>submit</button>
+        <button type="submit">submit</button>
         </form>
         </div>
-
     )
 }
 

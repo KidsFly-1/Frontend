@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../img/airplane.png';
+import logo from '../img/logo.png';
 
 const clearLocalStorage = () => {
     localStorage.clear();
