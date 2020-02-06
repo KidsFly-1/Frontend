@@ -30,7 +30,7 @@ const MyTrips = props => {
                 </div>
             </div>
             <div className="mytrip-cards">
-                {props.trips.map(val=>{
+                {props.userTrips.map(val=>{
                     return (
                         <>
                             <MyTripsCard key={val.id} trip={val} deleteTrip={props.deleteTrip}/>
@@ -45,7 +45,7 @@ const MyTrips = props => {
 
 const mapStateToProps = state => {
     return {
-        trips: state.trips,
+        userTrips: state.userTrips,
         isUpdating: state.isUpdating,
         error: state.error
     };

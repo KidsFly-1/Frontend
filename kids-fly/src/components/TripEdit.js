@@ -10,14 +10,12 @@ const TripEdit = () => {
         <label>Airport Name <input type="text" name="field1" /></label>
         <label>Airline <textarea name="field2"></textarea></label>
         </div>
-
        
         <div class="inner-wrap">
         <label>Departure Time <input type="text" name="field3" /></label>
         <label>Number of Carryon(s)<input type="text" name="field4" /></label>
         </div>
-
-    
+  
         <div class="inner-wrap">
         <label>Number of Checked Items <input type="text" name="field5" /></label>
         <label>Number of Children <input type="text" name="field6" /></label>
@@ -28,7 +26,6 @@ const TripEdit = () => {
         <button>submit</button>
         </form>
         </div>
-
     )
 }
 
